@@ -21,7 +21,7 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="city" id="city3" value="new york" v-model="city">
+              <input class="form-check-input" type="radio" name="city" id="city3" value="newyork" v-model="city">
               <label class="form-check-label" for="city3">
                 New York City
               </label>
@@ -334,7 +334,7 @@
     },
     methods: {
       async fetchAPI() {
-        let response = await axios.get('http://127.0.0.1:5000/api/' + this.city, {
+        let response = await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city, {
           params: {
             months: JSON.stringify(this.months),
             days: JSON.stringify(this.days)
