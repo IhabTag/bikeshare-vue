@@ -428,8 +428,8 @@
           this.usersStart = this.defaultUsersStartEnd[0]
           this.usersEnd = this.defaultUsersStartEnd[1]
           this.fetchUsersAPI()
-          await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city, {
-            // await axios.get('http://127.0.0.1:5000/api/' + this.city, {
+          // await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city, {
+            await axios.get('http://127.0.0.1:5000/api/' + this.city, {
             params: {
               months: JSON.stringify(this.months),
               days: JSON.stringify(this.days)
@@ -444,8 +444,8 @@
       },
       async fetchUsersAPI() {
         this.$Progress.start()
-        await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city + '/users', {
-          // await axios.get('http://127.0.0.1:5000/api/' + this.city + '/users', {
+        // await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city + '/users', {
+          await axios.get('http://127.0.0.1:5000/api/' + this.city + '/users', {
           params: {
             months: JSON.stringify(this.months),
             days: JSON.stringify(this.days),
