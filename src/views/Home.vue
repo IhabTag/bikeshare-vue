@@ -374,7 +374,7 @@
                 </div>
               </div>
               <div v-else>
-                <div class="text-center mb-3">Wait for user data to bea loaded ..</div>
+                <div class="text-center mb-3">Wait for user data to be loaded ...</div>
                 <div class="progress">
                   <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
                     aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
@@ -415,7 +415,8 @@
         usersRaw: [],
         defaultUsersStartEnd: [0, 5],
         allDaysSelect: false,
-        allMonthsSelect: false
+        allMonthsSelect: false,
+        baseUrl: 'http://127.0.0.1:5000'
       }
     },
     methods: {
@@ -429,7 +430,7 @@
           this.usersEnd = this.defaultUsersStartEnd[1]
           this.fetchUsersAPI()
           // await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city, {
-            await axios.get('http://127.0.0.1:5000/api/' + this.city, {
+            await axios.get(this.baseUrl + '/api/' + this.city, {
             params: {
               months: JSON.stringify(this.months),
               days: JSON.stringify(this.days)
@@ -445,7 +446,7 @@
       async fetchUsersAPI() {
         this.$Progress.start()
         // await axios.get('https://bikeshare-ihab-api.herokuapp.com/api/' + this.city + '/users', {
-          await axios.get('http://127.0.0.1:5000/api/' + this.city + '/users', {
+          await axios.get(this.baseUrl + '/api/' + this.city + '/users', {
           params: {
             months: JSON.stringify(this.months),
             days: JSON.stringify(this.days),
